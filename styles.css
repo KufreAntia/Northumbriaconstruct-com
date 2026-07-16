@@ -158,6 +158,18 @@ strong { color: var(--charcoal); }
 .direction-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .direction-card { padding: 40px 34px; border-radius: var(--radius); background: white; box-shadow: 0 10px 30px rgba(11,61,38,.05); }
 .direction-card > span { color: var(--green-600); font: 700 .72rem var(--sans); letter-spacing: .15em; text-transform: uppercase; }
+.founder-desk-hero { background: linear-gradient(120deg, #f5f9f5 0 68%, #dcecdf 68%); }
+.founder-letter-section { background: white; }
+.founder-letter-grid { display: grid; grid-template-columns: .72fr 1.28fr; gap: clamp(55px, 8vw, 120px); align-items: start; }
+.founder-letter-aside { position: sticky; top: 140px; }
+.founder-letter-aside h2 { color: var(--green-900); font-size: clamp(2.5rem, 4.4vw, 4.4rem); }
+.founder-letter { padding: clamp(35px, 6vw, 72px); border: 1px solid var(--grey-200); border-radius: 24px; background: var(--green-50); box-shadow: var(--shadow); }
+.founder-letter p { font-size: 1.08rem; }
+.founder-letter .letter-opening { color: var(--green-900); font-size: clamp(1.4rem, 2.5vw, 2rem); line-height: 1.45; }
+.founder-signoff { display: flex; flex-direction: column; margin-top: 45px; padding-top: 28px; border-top: 1px solid #ccdacf; font-family: var(--sans); }
+.founder-signoff span, .founder-signoff small { color: var(--grey-700); }
+.founder-signoff strong { margin: 5px 0 2px; color: var(--green-900); font-size: 1.35rem; }
+.founder-commitment-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .direction-card h2 { margin-top: 42px; font-size: clamp(1.8rem, 2.8vw, 2.5rem); }
 .direction-card p { margin-bottom: 0; font-size: .98rem; }
 .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
@@ -348,6 +360,8 @@ strong { color: var(--charcoal); }
   .site-nav .nav-cta { margin-top: 8px; text-align: center; }
   .hero { background: linear-gradient(160deg, #f7faf7 0 70%, #e7f2e9 70%); }
   .hero-grid, .impact-grid, .lab-hero-grid, .story-grid, .contact-grid, .news-feature, .origin-grid, .gap-grid, .about-intro-grid, .journey-grid, .looking-grid { grid-template-columns: minmax(0, 1fr); }
+  .founder-letter-grid { grid-template-columns: minmax(0, 1fr); gap: 45px; }
+  .founder-letter-aside { position: static; }
   .hero-grid { gap: 30px; }
   .hero-image { min-height: 430px; }
   .news-placeholder { min-height: 380px; }
@@ -366,6 +380,7 @@ strong { color: var(--charcoal); }
   .impact-home-grid { grid-template-columns: 1fr; gap: 50px; }
   .activity-card:nth-child(7), .value-card:last-child { grid-column: auto; }
   .direction-grid { grid-template-columns: 1fr; }
+  .founder-commitment-grid { grid-template-columns: 1fr; }
   .pillar-grid { grid-template-columns: 1fr 1fr; }
   .product-card { grid-template-columns: 1fr; }
   .orbital-mark { width: min(70vw, 380px); }
