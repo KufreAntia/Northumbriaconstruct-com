@@ -93,6 +93,7 @@ strong { color: var(--charcoal); }
 .documentary-image figcaption { position: absolute; left: 14px; right: 14px; bottom: 14px; z-index: 2; width: fit-content; max-width: calc(100% - 28px); padding: 10px 14px; border-radius: 8px; color: white; background: rgba(8,35,22,.88); backdrop-filter: blur(8px); font: 600 .72rem/1.4 var(--sans); }
 .documentary-image.hero-image { min-height: 520px; border-radius: 140px 18px 140px 18px; }
 .documentary-image.hero-image img { position: absolute; inset: 0; }
+.documentary-image.engagement-hero-image { min-height: 0; aspect-ratio: 16 / 9; border-radius: 90px 18px 90px 18px; }
 .hero-line { position: absolute; left: 0; bottom: 0; height: 7px; width: 31%; background: var(--green-700); }
 .intro-section { text-align: center; }
 .large-copy { font-size: clamp(1.35rem, 2.4vw, 1.85rem); line-height: 1.55; color: var(--charcoal); }
@@ -388,6 +389,7 @@ strong { color: var(--charcoal); }
   .button-row, .button { width: 100%; max-width: 100%; }
   .hero-image, .tall-placeholder, .project-placeholder { min-height: 330px; border-radius: 18px 70px 18px 70px; }
   .documentary-image.hero-image { min-height: 360px; border-radius: 18px 70px 18px 70px; }
+  .documentary-image.engagement-hero-image { min-height: 0; aspect-ratio: 16 / 9; border-radius: 18px 58px 18px 58px; }
   .split-heading { grid-template-columns: 1fr; gap: 8px; }
   .feature-grid, .project-details-grid, .project-details-grid.three, .process-grid, .audience-grid, .contact-topics, .activity-grid, .values-grid, .pillar-grid, .impact-list, .gap-cards, .education-equation { grid-template-columns: 1fr; }
   .home-activity-grid, .impact-home-list { grid-template-columns: 1fr; }
