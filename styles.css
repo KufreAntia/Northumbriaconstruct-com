@@ -135,6 +135,66 @@ strong { color: var(--charcoal); }
 .insight-card > span { color: var(--green-600); font: 700 .72rem var(--sans); letter-spacing: .14em; }
 .insight-card h3 { margin-top: 55px; color: var(--green-900); }
 .insight-card p { margin-bottom: 0; font-size: .98rem; }
+.membership-entry { background: var(--charcoal); color: white; }
+.membership-entry p { color: #c7d1cb; }
+.membership-entry-grid { display: grid; grid-template-columns: .78fr 1.22fr; gap: 70px; align-items: start; }
+.membership-entry-copy { position: sticky; top: 130px; }
+.membership-entry-copy h2 { color: white; }
+.membership-preview-grid { display: grid; gap: 16px; }
+.membership-preview-card { display: grid; grid-template-columns: 70px 1fr auto; gap: 22px; align-items: center; padding: 25px; border: 1px solid #37443d; border-radius: 18px; background: #202a24; text-decoration: none; transition: transform .2s, border-color .2s, background .2s; }
+.membership-preview-card:hover { transform: translateY(-3px); border-color: #70c991; background: #26332b; }
+.membership-preview-card > span:first-child { width: 58px; height: 58px; display: grid; place-items: center; border-radius: 50%; color: var(--green-900); background: #8bd5a5; font: 700 .82rem var(--sans); }
+.membership-preview-card h3 { margin-bottom: 7px; color: white; font-size: 1.25rem; }
+.membership-preview-card p { margin: 0; font-size: .9rem; line-height: 1.5; }
+.membership-preview-card .card-arrow { color: #8bd5a5; font: 700 1.3rem var(--sans); }
+
+.membership-hero { background: linear-gradient(120deg, #f3f8f3 0 72%, #dcecdf 72%); }
+.membership-hero .lead { max-width: 800px; }
+.membership-hub-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.membership-hub-card { position: relative; min-height: 430px; display: flex; flex-direction: column; padding: 34px; overflow: hidden; border: 1px solid var(--grey-200); border-radius: 22px; background: white; box-shadow: var(--shadow); text-decoration: none; transition: transform .25s, border-color .25s; }
+.membership-hub-card:hover { transform: translateY(-6px); border-color: var(--green-600); }
+.membership-hub-card .membership-mark { width: 64px; height: 64px; display: grid; place-items: center; margin-bottom: 70px; border-radius: 50%; color: white; background: var(--green-800); font: 700 .82rem var(--sans); }
+.membership-hub-card h2 { color: var(--green-900); font-size: 2rem; }
+.membership-hub-card p { flex: 1; font-size: .98rem; }
+.membership-hub-card .text-link { margin-top: 25px; }
+
+.membership-breadcrumb { padding: 25px 0 0; background: var(--green-50); }
+.membership-breadcrumb a { color: var(--green-700); font: 700 .8rem var(--sans); text-decoration: none; }
+.membership-breadcrumb a:hover { text-decoration: underline; }
+.membership-story-section { background: white; }
+.story-carousel { overflow: hidden; border: 1px solid var(--grey-200); border-radius: 24px; background: var(--charcoal); box-shadow: var(--shadow); }
+.story-carousel-header { display: flex; justify-content: space-between; gap: 24px; align-items: center; padding: 22px 28px; border-bottom: 1px solid #35443c; color: white; font-family: var(--sans); }
+.story-carousel-header strong { font-size: .82rem; letter-spacing: .13em; text-transform: uppercase; }
+.story-carousel-header span { color: #9fb0a5; font-size: .78rem; }
+.story-slide { min-height: 470px; padding: clamp(36px, 6vw, 72px); outline: 0; }
+.story-slide[hidden] { display: none; }
+.story-slide-layout { display: grid; grid-template-columns: 110px 1fr; gap: 45px; align-items: start; }
+.story-step { color: #7ad49b; font: 700 clamp(4.5rem, 8vw, 7rem)/.85 var(--sans); letter-spacing: -.08em; }
+.story-slide h2 { max-width: 780px; color: white; font-size: clamp(2.2rem, 4.3vw, 4rem); }
+.story-slide .story-lead { max-width: 780px; color: #d5ded8; font-size: 1.16rem; }
+.story-points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 42px; }
+.story-point { padding: 22px; border: 1px solid #3b4a42; border-radius: 14px; background: #202a24; }
+.story-point span { display: block; margin-bottom: 12px; color: #80d79f; font: 700 .68rem var(--sans); letter-spacing: .11em; text-transform: uppercase; }
+.story-point p { margin: 0; color: #c6d1ca; font-size: .9rem; line-height: 1.55; }
+.story-carousel-controls { display: flex; align-items: center; gap: 12px; padding: 18px 28px; border-top: 1px solid #35443c; color: white; }
+.story-dot { width: 11px; height: 11px; padding: 0; border: 1px solid #86a18f; border-radius: 50%; background: transparent; cursor: pointer; }
+.story-dot.is-active { border-color: #8bd5a5; background: #8bd5a5; }
+.story-carousel-controls [data-story-status] { margin-left: 8px; color: #a9b7ae; font: 500 .75rem var(--sans); }
+.story-control-button { width: 44px; height: 44px; display: grid; place-items: center; padding: 0; border: 1px solid #536259; border-radius: 50%; color: white; background: transparent; cursor: pointer; }
+.story-control-button:hover { color: var(--green-900); background: #8bd5a5; }
+.story-carousel-controls [data-story-previous] { margin-left: auto; }
+.illustrative-note { margin: 18px 0 0; color: var(--grey-500); font: italic .86rem/1.5 var(--serif); }
+.membership-benefit-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.membership-benefit-card { min-height: 245px; padding: 28px; border: 1px solid var(--grey-200); border-radius: 18px; background: var(--green-50); }
+.membership-benefit-card > span { display: block; color: var(--green-600); font: 700 .7rem var(--sans); letter-spacing: .13em; }
+.membership-benefit-card h3 { margin-top: 42px; color: var(--green-900); font-size: 1.35rem; }
+.membership-benefit-card p { margin-bottom: 0; font-size: .94rem; }
+.membership-action-panel { display: grid; grid-template-columns: 1.15fr .85fr; gap: 55px; align-items: center; padding: clamp(36px, 6vw, 68px); border-radius: 24px; background: var(--green-800); }
+.membership-action-panel h2 { color: white; }
+.membership-action-panel p { color: #d9e8de; }
+.membership-action-panel .button-row { justify-content: flex-end; margin-top: 0; }
+.source-note { margin-top: 30px; padding-top: 22px; border-top: 1px solid var(--grey-200); color: var(--grey-500); font: .78rem/1.55 var(--sans); }
+.source-note a { color: var(--green-700); }
 .statement-stack { margin: 38px 0; padding: 25px 30px; border-left: 4px solid var(--green-600); background: var(--green-50); }
 .statement-stack p { margin: 0; color: var(--green-900); font-family: var(--sans); font-weight: 600; }
 .statement-stack p + p { margin-top: 7px; }
@@ -389,6 +449,10 @@ strong { color: var(--charcoal); }
   .site-nav .nav-cta { margin-top: 8px; text-align: center; }
   .hero { background: linear-gradient(160deg, #f7faf7 0 70%, #e7f2e9 70%); }
   .hero-grid, .impact-grid, .lab-hero-grid, .story-grid, .contact-grid, .news-feature, .origin-grid, .gap-grid, .about-intro-grid, .journey-grid, .looking-grid { grid-template-columns: minmax(0, 1fr); }
+  .membership-entry-grid, .membership-action-panel { grid-template-columns: minmax(0, 1fr); }
+  .membership-entry-copy { position: static; }
+  .membership-hub-grid, .membership-benefit-grid { grid-template-columns: 1fr 1fr; }
+  .membership-action-panel .button-row { justify-content: flex-start; }
   .founder-letter-grid { grid-template-columns: minmax(0, 1fr); gap: 45px; }
   .founder-letter-aside { position: static; }
   .hero-grid { gap: 30px; }
@@ -443,6 +507,16 @@ strong { color: var(--charcoal); }
   .media-gallery, .paired-photos { grid-template-columns: 1fr; }
   .debate-gallery, .ciob-gallery { column-count: 1; }
   .news-card-grid { grid-template-columns: 1fr; }
+  .membership-hub-grid, .membership-benefit-grid, .story-points { grid-template-columns: 1fr; }
+  .membership-preview-card { grid-template-columns: 52px 1fr auto; gap: 15px; padding: 20px; }
+  .membership-preview-card > span:first-child { width: 48px; height: 48px; }
+  .story-slide { min-height: 560px; padding: 34px 24px; }
+  .story-slide-layout { grid-template-columns: 1fr; gap: 30px; }
+  .story-step { font-size: 4.4rem; }
+  .story-carousel-header { align-items: flex-start; padding: 18px 20px; }
+  .story-carousel-controls { padding: 15px 20px; }
+  .membership-hub-card { min-height: 360px; }
+  .membership-hub-card .membership-mark { margin-bottom: 45px; }
   .gallery-card.gallery-wide { grid-column: auto; }
   .international-story { padding: 22px; }
   .feature-card:last-child { grid-column: auto; }
