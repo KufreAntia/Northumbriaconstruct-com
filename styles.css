@@ -661,6 +661,11 @@ strong { color: var(--charcoal); }
 .panel-slide-tabs small { font: 700 .65rem var(--sans); letter-spacing: .12em; text-transform: uppercase; }
 .panel-slide-stage { min-width: 0; }
 .panel-slide[hidden] { display: none; }
+.panel-slide-image { background: #071f15; }
+.community-story-image { margin: 0; background: #071f15; }
+.community-story-image a { display: block; padding: 12px; }
+.community-story-image img { display: block; width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; border-radius: 14px; }
+.community-story-image figcaption { padding: 13px 20px 16px; color: #c4d5ca; background: #071f15; font: 500 .76rem/1.5 var(--sans); }
 .story-panel-grid { display: grid; grid-template-columns: 1fr 1fr; min-height: 520px; gap: 2px; background: rgba(255,255,255,.12); }
 .story-panel-grid > div { position: relative; min-height: 255px; display: flex; align-items: flex-end; padding: 30px; color: white; background: linear-gradient(145deg, #145d39, #0d422b); }
 .story-panel-grid > div:nth-child(2), .story-panel-grid > div:nth-child(3) { background: linear-gradient(145deg, #0d482e, #082f20); }
@@ -717,9 +722,13 @@ strong { color: var(--charcoal); }
   .insight-card-wide { grid-column: auto; }
   .compact-membership-hero { padding: 52px 0 42px; }
   .compact-membership-story { padding: 55px 0; }
-  .panel-slideshow { grid-template-columns: 78px minmax(0, 1fr); border-radius: 16px; }
-  .panel-slide-tabs button { min-height: 110px; padding: 12px; }
+  .panel-slideshow { grid-template-columns: minmax(0, 1fr); border-radius: 16px; }
+  .panel-slide-tabs { flex-direction: row; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.14); }
+  .panel-slide-tabs button { flex: 1; min-height: 76px; padding: 12px; }
+  .panel-slide-tabs button.is-active { box-shadow: inset 0 4px #8bd5a5; }
   .panel-slide-tabs small { font-size: .54rem; }
+  .community-story-image a { padding: 7px; }
+  .community-story-image img { border-radius: 10px; }
   .story-panel-grid { grid-template-columns: 1fr; min-height: 620px; }
   .story-panel-grid > div { min-height: 155px; padding: 48px 20px 20px; }
   .story-panel-grid p { font-size: 1rem; }
