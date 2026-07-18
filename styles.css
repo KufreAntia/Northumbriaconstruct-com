@@ -644,7 +644,7 @@ strong { color: var(--charcoal); }
 .story-index-item small { color: var(--grey-500); font: 500 .68rem var(--sans); }
 .professional-guides { background: var(--charcoal); color: white; }
 .professional-guides h2 { color: white; }
-.guide-link-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.guide-link-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .guide-link-grid a { min-height: 300px; display: flex; flex-direction: column; padding: 28px; border: 1px solid #3a4b41; border-radius: 18px; color: white; background: #202a24; text-decoration: none; transition: transform .2s, border-color .2s; }
 .guide-link-grid a:hover { transform: translateY(-5px); border-color: #75cf96; }
 .guide-link-grid span { color: #80d69e; font: 700 .68rem var(--sans); letter-spacing: .12em; text-transform: uppercase; }
