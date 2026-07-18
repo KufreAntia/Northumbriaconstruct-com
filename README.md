@@ -9,6 +9,8 @@ A simple, dependency-free static website for Northumbria Construct.
 - `projects.html` — Projects and impact
 - `innovation-lab.html` — Innovation Lab and NorCon Projects
 - `contact.html` — Contact information
+- `privacy.html` — Website privacy notice
+- `404.html` — Custom not-found page
 
 ## Preview locally
 
@@ -20,7 +22,8 @@ The site can be deployed directly from this repository using GitHub Pages, Netli
 
 ## Before launch
 
-1. Replace the labelled image placeholders with authentic Northumbria Construct photography.
-2. Add the official contact email address to `contact.html`.
-3. If available, add a licensed Roca One webfont file and declare it in `styles.css`. DM Sans is currently used as the heading fallback.
-4. Add a verified caption track or transcript for the Summer Congregation video before public launch.
+1. Create and add the official `contactus@northumbriaconstruct.com` mailbox.
+2. Connect the Northumbria Construct community form to its private response spreadsheet.
+3. Confirm the privacy-notice retention periods and replace the contact-page placeholder once the domain mailbox is active.
+
+The Summer Congregation video includes an English caption track and visible transcript. Roca One remains optional; the current heading fallback can continue to be used unless a licensed webfont file is supplied.
