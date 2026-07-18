@@ -654,6 +654,7 @@ strong { color: var(--charcoal); }
 .story-grid-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 38px; }
 .content-filter-tabs { padding: 0; border: 0; }
 .insight-card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.insight-card-grid.compact-update-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 980px; }
 .insight-card { min-height: 400px; display: flex; flex-direction: column; padding: 30px; border: 1px solid var(--grey-200); border-radius: 20px; background: white; }
 .insight-card[hidden] { display: none; }
 .insight-card-mark { color: #d6e5da; font: 700 3.5rem/1 var(--sans); }
@@ -746,7 +747,7 @@ strong { color: var(--charcoal); }
   .story-index-list { grid-template-columns: 1fr; }
   .story-index-item:nth-child(n+5) { display: none; }
   .story-grid-heading { align-items: flex-start; flex-direction: column; }
-  .guide-link-grid, .insight-card-grid { grid-template-columns: 1fr; }
+  .guide-link-grid, .insight-card-grid, .insight-card-grid.compact-update-grid { grid-template-columns: 1fr; }
   .insight-card-wide { grid-column: auto; }
   .compact-membership-hero { padding: 52px 0 42px; }
   .compact-membership-story { padding: 55px 0; }
