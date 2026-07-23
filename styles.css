@@ -405,6 +405,15 @@ strong { color: var(--charcoal); }
 .pending-detail strong, .pending-detail span { display: block; font-family: var(--sans); }
 .pending-detail span { color: #b8c9be; font-size: .85rem; }
 .contact-note { margin: 22px 0 0 !important; padding: 16px; border-radius: 10px; background: rgba(255,255,255,.07); font-size: .88rem; }
+.contact-form { margin: 28px 0 8px; display: grid; gap: 18px; }
+.contact-form .form-field { display: grid; gap: 7px; }
+.contact-form label { color: #b8c9be; font: 700 .72rem var(--sans); letter-spacing: .1em; text-transform: uppercase; }
+.contact-form input, .contact-form select, .contact-form textarea { width: 100%; padding: 13px 15px; border: 1px solid rgba(255,255,255,.2); border-radius: 10px; background: rgba(255,255,255,.08); color: white; font-family: var(--sans); }
+.contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { outline: 2px solid #85dda5; outline-offset: 1px; border-color: transparent; }
+.contact-form select option { color: var(--charcoal); }
+.contact-form textarea { min-height: 110px; resize: vertical; }
+.contact-form input[name="_honey"] { display: none; }
+.contact-form .button { margin-top: 4px; cursor: pointer; }
 .audience-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .audience-card { padding: 32px; border-radius: var(--radius); background: white; }
 .audience-card > span { width: 42px; height: 42px; display: grid; place-items: center; margin-bottom: 45px; border-radius: 50%; color: white; background: var(--green-700); font: 700 .8rem var(--sans); }
