@@ -164,3 +164,48 @@ document.querySelectorAll('[data-story-grid]').forEach((grid) => {
     });
   }));
 });
+
+const contactForm = document.querySelector('.contact-form');
+const formModal = document.querySelector('[data-form-modal]');
+if (contactForm && formModal) {
+  const closeModal = () => {
+    formModal.hidden = true;
+    document.body.classList.remove('modal-open');
+  };
+  const openModal = () => {
+    formModal.hidden = false;
+    document.body.classList.add('modal-open');
+    formModal.querySelector('[data-modal-close]:not(.form-modal-backdrop)')?.focus();
+  };
+
+  formModal.querySelectorAll('[data-modal-close]').forEach((element) => element.addEventListener('click', closeModal));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !formModal.hidden) closeModal();
+  });
+
+  contactForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const button = contactForm.querySelector('button[type="submit"]');
+    const label = button.dataset.label || button.textContent;
+    button.dataset.label = label;
+    button.disabled = true;
+    button.textContent = 'Sending…';
+
+    try {
+      const response = await fetch(contactForm.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(contactForm)
+      });
+      if (!response.ok) throw new Error('Request failed');
+      contactForm.reset();
+      button.textContent = label;
+      openModal();
+    } catch (error) {
+      button.textContent = 'Please try again';
+      setTimeout(() => { button.textContent = label; }, 4000);
+    } finally {
+      button.disabled = false;
+    }
+  });
+}
