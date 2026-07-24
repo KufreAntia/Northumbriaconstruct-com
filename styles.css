@@ -521,7 +521,7 @@ body.modal-open { overflow: hidden; }
 @media (max-width: 620px) {
   .news-top h1 { font-size: 2rem; white-space: normal; }
   body { font-size: 17px; }
-  .container { width: calc(100% - 32px); max-width: calc(100% - 32px); }
+  .container { width: calc(100% - 40px); max-width: calc(100% - 40px); }
   .site-header { height: 78px; }
   .site-nav { top: 78px; }
   .brand img { width: 52px; height: 52px; }
@@ -529,7 +529,7 @@ body.modal-open { overflow: hidden; }
   .hero, .page-hero { padding: 65px 0; }
   .nav-wrap { width: calc(100% - 32px); max-width: calc(100% - 32px); }
   .menu-toggle { flex: 0 0 48px; }
-  .hero-grid, .hero-copy, .page-hero-grid, .page-hero-grid > div, .lab-hero-grid, .lab-hero-grid > div { width: 100%; max-width: 100%; }
+  .hero-copy, .page-hero-grid > div, .lab-hero-grid > div { width: 100%; max-width: 100%; }
   h1 { max-width: 100%; font-size: clamp(2.65rem, 11vw, 3.1rem); overflow-wrap: anywhere; }
   .page-hero h1 { font-size: clamp(2.75rem, 11.5vw, 3.25rem); }
   .lead { font-size: 1.12rem; }
