@@ -8,7 +8,7 @@ A simple, dependency-free static website for Northumbria Construct.
 - `about.html` — About, journey and operating model
 - `projects.html` — Projects and impact
 - `innovation-lab.html` — Innovation Lab and NorCon Projects
-- `contact.html` — Contact information
+- The public website is a single About Us page; previous page URLs redirect to the homepage.
 - `privacy.html` — Website privacy notice
 - `404.html` — Custom not-found page
 

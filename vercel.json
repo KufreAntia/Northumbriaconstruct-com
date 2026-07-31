@@ -1,16 +1,6 @@
 {
   "redirects": [
     {
-      "source": "/news-insights",
-      "destination": "/projects.html",
-      "permanent": true
-    },
-    {
-      "source": "/news-insights.html",
-      "destination": "/projects.html",
-      "permanent": true
-    },
-    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "northumbriaconstruct.com" }],
       "destination": "https://www.northumbriaconstruct.com/:path*",
@@ -20,6 +10,61 @@
       "source": "/:path*",
       "has": [{ "type": "host", "value": "northumbriaconstruct-com.vercel.app" }],
       "destination": "https://www.northumbriaconstruct.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/founders-desk.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/innovation-lab.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/membership-hub.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/apm-membership.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ciob-membership.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/nc-membership.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/news-insights",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/news-insights.html",
+      "destination": "/",
       "permanent": true
     }
   ],
