@@ -13,11 +13,6 @@
       "permanent": true
     },
     {
-      "source": "/about.html",
-      "destination": "/",
-      "permanent": true
-    },
-    {
       "source": "/founders-desk.html",
       "destination": "/",
       "permanent": true
