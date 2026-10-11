@@ -807,3 +807,8 @@ body.modal-open { overflow: hidden; }
   .community-signup form { grid-template-columns: 1fr; }
   .community-signup button { grid-column: auto; }
 }
+
+@media (min-width: 901px) and (max-width: 1100px) {
+  .site-nav { gap: 12px; font-size: .72rem; }
+  .site-nav .nav-cta { padding: 12px 14px; }
+}
