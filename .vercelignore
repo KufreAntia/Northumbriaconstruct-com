@@ -1,0 +1,8 @@
+docs/
+tmp/
+.agents/
+.claude/
+.codex/
+.git/
+.vercel/
+__pycache__/

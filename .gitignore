@@ -1,0 +1,9 @@
+# Local development and review material
+/docs/
+/tmp/
+/.agents/
+/.claude/
+/.codex/
+/.vercel/
+__pycache__/
+*.pyc

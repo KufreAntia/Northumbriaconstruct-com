@@ -1,3 +1,4 @@
+document.documentElement.classList.add('js-enabled');
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('.site-nav');
 
@@ -9,10 +10,20 @@ if (menuButton && navigation) {
     menuButton.querySelector('.sr-only').textContent = isOpen ? 'Open navigation' : 'Close navigation';
   });
 
-  navigation.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+  const closeMenu = (restoreFocus = false) => {
     menuButton.setAttribute('aria-expanded', 'false');
     navigation.classList.remove('is-open');
-  }));
+    menuButton.querySelector('.sr-only').textContent = 'Open navigation';
+    if (restoreFocus) menuButton.focus();
+  };
+  navigation.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => closeMenu()));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') closeMenu(true);
+  });
+  document.addEventListener('click', (event) => {
+    if (!navigation.contains(event.target) && !menuButton.contains(event.target)) closeMenu();
+  });
+  window.matchMedia('(min-width: 901px)').addEventListener('change', () => closeMenu());
 }
 
 document.querySelectorAll('[data-year]').forEach((element) => {
