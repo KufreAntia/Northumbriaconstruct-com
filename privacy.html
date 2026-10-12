@@ -17,6 +17,8 @@
   <link rel="icon" href="assets/northumbria-construct-logo.png" type="image/png">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
+  <link rel="stylesheet" href="analytics.css">
+  <script src="analytics.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -24,7 +26,7 @@
   <main id="main">
     <section class="page-hero"><div class="container page-hero-grid"><div><p class="eyebrow">Privacy</p><h1>Privacy notice.</h1><p class="lead">This notice explains what personal information Northumbria Construct may collect through this website and how it is used.</p></div><div class="page-index" aria-hidden="true">05</div></div></section>
     <section class="section privacy-section"><div class="container narrow legal-copy">
-      <p class="mini-label">Last updated 18 July 2026</p>
+      <p class="mini-label">Last updated 12 October 2026</p>
       <h2>Who is responsible for your information</h2>
       <p>Northumbria Construct is responsible for deciding how personal information submitted through this website is used. Until our domain email service is active, privacy enquiries can be made through the <a href="contact.html">Contact us page</a>.</p>
 
@@ -53,8 +55,14 @@
       <h2>Your rights</h2>
       <p>Depending on the circumstances, you may ask us for access to your personal information, correction, deletion, restriction, transfer, or to object to its use. Where processing is based on consent, you may withdraw that consent. You may also complain to the UK Information Commissioner’s Office at <a href="https://ico.org.uk/make-a-complaint/" target="_blank" rel="noopener">ico.org.uk</a>.</p>
 
-      <h2>Cookies</h2>
-      <p>Northumbria Construct does not currently use advertising cookies or analytics cookies. Essential functionality provided by the website host may operate without tracking you for advertising purposes. If this changes, this notice and the website’s consent controls will be updated first.</p>
+      <h2 id="website-statistics">Cookie-free website statistics</h2>
+      <p>When enabled, optional website statistics help us improve navigation and understand which opportunities and resources are useful. Statistics remain off until you select “Allow statistics”. You can refuse without affecting your access to the website, and withdraw permission below.</p>
+      <p>We use Vercel Web Analytics for aggregate page views and approximate visitor trends. Vercel derives a short-lived visitor hash from incoming requests, discards its visitor session identifier after 24 hours, and reports aggregate statistics. It may process browser, device, approximate location and referrer information. We remove query parameters and fragments from page addresses before sending them and suppress Vercel collection where the referrer contains query parameters or is not a known public page on this website.</p>
+      <p>Our separate aggregate counters record the UTC date, public page path and counts of clicks to approved professional membership links, project pages, event registration pages and downloadable resources. These counters use Upstash Redis storage and expire after 365 days. They do not store IP addresses, names, email addresses, visitor identifiers, form contents or individual browsing histories. Clicks do not confirm that you joined, registered or completed a download.</p>
+      <p>These statistics are used only to improve this website, not for advertising or profiling. Vercel and Upstash process information on our behalf; hosting and security systems still necessarily process network requests. Provider reporting windows depend on the hosting plan. See <a href="https://vercel.com/docs/analytics/privacy-policy" target="_blank" rel="noopener noreferrer">Vercel’s analytics privacy information</a> and <a href="https://upstash.com/trust/privacy.pdf" target="_blank" rel="noopener noreferrer">Upstash’s privacy information</a>.</p>
+      <p>No analytics cookies are set. This browser stores only your on/off preference in local storage so we can remember your choice. Clear site storage to remove it. We honour Global Privacy Control and Do Not Track by keeping both collection systems off. Aggregate counts already collected cannot be linked back to you for individual deletion.</p>
+      <p data-statistics-status role="status" aria-live="polite">Anonymous statistics are off unless you have explicitly allowed them. JavaScript is needed to change this browser’s preference.</p>
+      <div class="statistics-choices"><button type="button" data-statistics-choice="on">Allow statistics</button><button type="button" data-statistics-choice="off">Turn statistics off</button></div>
 
       <h2>Changes to this notice</h2>
       <p>We may update this notice when our services or information-handling practices change. The current version and its update date will remain available on this page.</p>

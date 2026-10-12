@@ -1,0 +1,9 @@
+{
+  "name": "northumbria-construct",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "check": "node --check script.js && node --check analytics.js && node --check admin-analytics.js"
+  },
+  "engines": { "node": "24.x" }
+}

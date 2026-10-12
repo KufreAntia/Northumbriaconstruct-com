@@ -35,3 +35,6 @@ The Summer Congregation video includes an English caption track and visible tran
 Run `python docs/verify-phase1.py`, `python docs/verify-phase2.py`, `node --check script.js` and `git diff --check`. The Python structural checker uses locally installed lxml; the website has no runtime dependencies or build step. Browser checks are documented in `docs/phase2/REPORT.md`.
 
 The approved content update uses owner-supplied records and photographs. See `docs/phase2/APPROVED-BUILD.md` for the current handoff. PIIE is excluded and NorCon interface screenshots are not displayed. Original assets remain intact. No Google Drive folder has been connected. Do not deploy or push without explicit owner approval.
+# Optional website analytics
+
+See [ANALYTICS.md](ANALYTICS.md) for the cookie-free analytics implementation, secure administrator dashboard, environment setup, privacy choices, preview release gate and retrieval instructions. Collection defaults off until storage is configured and each visitor allows statistics. Existing page routes and the protected congregation video are retained.

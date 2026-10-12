@@ -1,0 +1,122 @@
+{
+  "pages": [
+    "/about.html",
+    "/activities.html",
+    "/apm-membership.html",
+    "/ciob-membership.html",
+    "/contact.html",
+    "/founders-desk.html",
+    "/",
+    "/innovation-lab.html",
+    "/join.html",
+    "/membership-hub.html",
+    "/nc-membership.html",
+    "/news-insights.html",
+    "/privacy.html",
+    "/projects.html"
+  ],
+  "targets": [
+    {
+      "id": "download-dd251d37bfca",
+      "category": "download",
+      "label": "Upstash\u2019s privacy information",
+      "destination": "https://upstash.com/trust/privacy.pdf"
+    },
+    {
+      "id": "event-011f8b36170f",
+      "category": "event",
+      "label": "CIOB event details and booking \u2192",
+      "destination": "https://www.ciob.org/events/site-visit-amberley-harrogate-street-2002193382304"
+    },
+    {
+      "id": "event-3c5e0b08985f",
+      "category": "event",
+      "label": "CIOB event details and booking \u2192",
+      "destination": "https://www.ciob.org/events/site-visit-castle-leazes-2000413060313"
+    },
+    {
+      "id": "event-c20c735b7e9c",
+      "category": "event",
+      "label": "CIOB event details and booking \u2192",
+      "destination": "https://www.ciob.org/events/site-visit-regent-farm-first-school-2000254697646"
+    },
+    {
+      "id": "membership-cc091db6ef37",
+      "category": "membership",
+      "label": "APM membership grades",
+      "destination": "https://www.apm.org.uk/membership/"
+    },
+    {
+      "id": "membership-544b867ff0b7",
+      "category": "membership",
+      "label": "Apply on the official APM website",
+      "destination": "https://www.apm.org.uk/membership/student/"
+    },
+    {
+      "id": "membership-d0136f47c822",
+      "category": "membership",
+      "label": "CIOB membership grades",
+      "destination": "https://www.ciob.org/membership"
+    },
+    {
+      "id": "membership-bbdb880a65cb",
+      "category": "membership",
+      "label": "Explore CIOB student membership",
+      "destination": "https://www.ciob.org/membership/student"
+    },
+    {
+      "id": "membership-8a8b32d7f907",
+      "category": "membership",
+      "label": "Tomorrow\u2019s Leaders \u2014 leadership and professional community",
+      "destination": "https://www.ciob.org/membership/tomorrows-leaders"
+    },
+    {
+      "id": "project-facfdff1b687",
+      "category": "project",
+      "label": "Innovation",
+      "destination": "/innovation-lab.html"
+    },
+    {
+      "id": "project-aee32056467d",
+      "category": "project",
+      "label": "BRIC \u2014 Build Routes Into Construction",
+      "destination": "/innovation-lab.html#bric"
+    },
+    {
+      "id": "project-37779002537c",
+      "category": "project",
+      "label": "Explore its applications",
+      "destination": "/innovation-lab.html#norcon-applications"
+    },
+    {
+      "id": "project-2f049f90e3e0",
+      "category": "project",
+      "label": "NorCon Projects",
+      "destination": "/innovation-lab.html#norcon-projects"
+    },
+    {
+      "id": "project-a96c99e37c00",
+      "category": "project",
+      "label": "Our Work",
+      "destination": "/projects.html"
+    },
+    {
+      "id": "project-27e4a79711bd",
+      "category": "project",
+      "label": "Bridge the Gap",
+      "destination": "/projects.html#bridge-the-gap"
+    },
+    {
+      "id": "project-75b26843ad70",
+      "category": "project",
+      "label": "Planning and delivery case study \u2192",
+      "destination": "/projects.html#gateshead-engagement"
+    },
+    {
+      "id": "project-f24c3ab57c1d",
+      "category": "project",
+      "label": "Oxford-Style Debate",
+      "destination": "/projects.html#oxford-style-debate"
+    }
+  ]
+}

@@ -45,5 +45,11 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/admin/analytics",
+      "destination": "/api/admin-analytics"
+    }
   ]
 }

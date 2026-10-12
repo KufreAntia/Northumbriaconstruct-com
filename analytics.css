@@ -1,0 +1,18 @@
+.statistics-notice { position: fixed; bottom: 1rem; left: 1rem; right: 1rem; z-index: 100; max-width: 52rem; margin: auto; padding: 1rem 1.25rem; background: #fff; color: #083d25; border: 1px solid #278b45; border-radius: .5rem; box-shadow: 0 3px 18px #0002; }
+.statistics-notice p { margin: 0 0 .75rem; }
+.statistics-notice div, .statistics-choices { display: flex; flex-wrap: wrap; gap: .75rem; }
+.statistics-notice button, .statistics-choices button, .analytics-dashboard button { background: #fff; color: #083d25; border: 1px solid #083d25; padding: .65rem 1rem; border-radius: .25rem; font: inherit; cursor: pointer; }
+.statistics-notice button:focus-visible, .statistics-choices button:focus-visible, .analytics-dashboard :focus-visible { outline: 3px solid #278b45; outline-offset: 3px; }
+.analytics-dashboard { padding-top: 3rem; padding-bottom: 4rem; }
+.analytics-dashboard h1 { font-size: clamp(2rem, 5vw, 3rem); }
+.analytics-dashboard section { margin: 2rem 0; }
+#analytics-filter, .analytics-summary { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: end; margin: 1.5rem 0; }
+#analytics-filter label { display: grid; gap: .4rem; }
+#analytics-filter input { font: inherit; padding: .5rem; max-width: 100%; }
+.analytics-summary section { padding: 1rem; border: 1px solid #d4e5d9; flex: 1 1 12rem; margin: 0; }
+.analytics-summary h2 { font-size: 1rem; }
+.analytics-summary p { font-size: 2rem; margin: .5rem 0; }
+.analytics-table { overflow-x: auto; }
+.analytics-dashboard table { border-collapse: collapse; width: 100%; }
+.analytics-dashboard td, .analytics-dashboard th { text-align: left; padding: .65rem; border-bottom: 1px solid #d4e5d9; overflow-wrap: anywhere; }
+@media (max-width: 600px) { .statistics-notice { bottom: .5rem; left: .5rem; right: .5rem; padding: .75rem; } }
