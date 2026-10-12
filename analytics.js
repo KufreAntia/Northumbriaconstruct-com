@@ -56,8 +56,8 @@
   }
   function render() {
     const status = document.querySelector('[data-statistics-status]');
-    if (status) status.textContent = signal() ? 'Statistics are off because your browser requests privacy.' : allowed() ? 'Anonymous statistics are on. You can turn them off at any time.' : 'Anonymous statistics are off.';
-    document.querySelectorAll('[data-statistics-choice="on"]').forEach(button => { button.disabled = signal(); });
+    if (status) status.textContent = signal() ? 'Statistics are off because your browser requests privacy.' : !config?.enabled ? 'Website statistics are currently disabled.' : allowed() ? 'Anonymous statistics are on. You can turn them off at any time.' : 'Anonymous statistics are off.';
+    document.querySelectorAll('[data-statistics-choice="on"]').forEach(button => { button.disabled = signal() || !config?.enabled; });
     document.querySelector('[data-statistics-notice]')?.remove();
     if (preference || signal() || !config?.enabled) return;
     const notice = document.createElement('aside');
@@ -67,7 +67,7 @@
     notice.innerHTML = '<p>May we collect anonymous, cookie-free statistics to improve this website? <a href="/privacy.html#website-statistics">Privacy and choices</a></p><div><button type="button" data-statistics-choice="on">Allow statistics</button><button type="button" data-statistics-choice="off">Keep statistics off</button></div>';
     document.body.append(notice);
   }
-  document.addEventListener('click', event => {
+  function recordClick(event) {
     const button = event.target.closest('[data-statistics-choice]');
     if (button) { choose(button.dataset.statisticsChoice); return; }
     const link = event.target.closest('a[href]');
@@ -77,7 +77,9 @@
     const destination = url.origin === location.origin ? url.pathname + url.hash : url.href;
     const target = config.targets.find(item => item.destination === destination);
     if (target) send('click', target.id);
-  });
+  }
+  document.addEventListener('click', recordClick);
+  document.addEventListener('auxclick', event => { if (event.button === 1) recordClick(event); });
   window.addEventListener('storage', event => {
     if (event.key === preferenceKey) { preference = readPreference(); render(); start(); }
   });

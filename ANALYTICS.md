@@ -8,6 +8,8 @@ The website is plain static HTML, CSS and browser JavaScript. The audit found no
 
 Local security/privacy tests and existing asset/route checks pass. **Account plan, Web Analytics activation, provisioned storage, live provider API responses and the full preview workflow still require authenticated Vercel access. Production promotion is gated on those checks.** Missing configuration disables collection and blocks the administrator page. No historical analytics have been inferred or backfilled.
 
+The Git integration built commit `649e686` successfully as **Preview – northumbriaconstruct-com-lxqd**: [protected preview](https://northumbriaconstruct-com-lxqd-2ebrt9tz4-kufreantias-projects.vercel.app). GitHub deployment status confirmed success; browser access redirects to Vercel login. This confirms build completion, not a successful live analytics workflow. Master/production were not modified. A local route server is available with `node tools/serve-local.js`; it uses the actual functions and does not inject sample statistics.
+
 ## Components and routes
 
 | File / route | Purpose |
@@ -99,7 +101,7 @@ python docs/verify-phase2.py
 git diff --check
 ```
 
-Node tests use **mocked provider responses**, not a permanent database. They cover validation, origin/activation, atomic command shape, bounded retention, cap handling, administrator auth/rate limiting, outages, date filters, aggregate reports and refusal/DNT/GPC/redaction. Existing verification confirms all 33 original assets, the complete protected video figure, and page references remain intact.
+All 14 Node tests pass using **mocked provider responses**, not a permanent database. They cover validation, origin/activation, atomic command shape, bounded retention, cap handling, administrator auth/rate limiting, outages, date filters, aggregate reports, correct non-summed visitor estimates and refusal/withdrawal/DNT/GPC/redaction. Existing verification confirms all 33 original assets, the complete protected video figure, and 493 local page references remain intact. Local privacy controls were checked at desktop and 390px mobile width: no horizontal overflow, keyboard refusal works, no analytics provider script is loaded while off, and no console errors were observed on that page. The unconfigured administrator route returns 503 rather than exposing the dashboard. These local checks do not replace live Preview testing.
 
 Required real Preview checks before promotion:
 

@@ -164,3 +164,51 @@ test('browser sends no collection requests or Vercel script without permission, 
     }
   }
 });
+test('Vercel visitor query uses ungrouped totals and selects the correct environment', async () => {
+  process.env.VERCEL_ANALYTICS_READ_TOKEN = 'test-server-only-vercel';
+  process.env.ANALYTICS_VERCEL_PROJECT_ID = 'prj_test';
+  process.env.ANALYTICS_VERCEL_TEAM_ID = 'team_test';
+  const { traffic } = require('../server/vercel-traffic');
+  const queries = [];
+  global.fetch = async (address, options) => {
+    const url = new URL(address); queries.push(url);
+    assert.equal(url.hostname, 'api.vercel.com');
+    assert.equal(options.headers.Authorization, 'Bearer test-server-only-vercel');
+    return { ok: true, json: async () => ({ data: url.searchParams.get('by') === '[]' ? [{ pageviews: 12, visitors: 5 }] : [{ timestamp: '2026-10-11', pageviews: 6, visitors: 4 }, { timestamp: '2026-10-12', pageviews: 6, visitors: 4 }] }) };
+  };
+  const result = await traffic({ start: '2026-10-11', end: '2026-10-12' });
+  assert.equal(result.approximateVisitors, 5); // not the sum (8) of daily counts
+  assert.equal(result.pageviews, 12);
+  assert(queries.every(url => url.searchParams.get('projectId') === 'prj_test' && url.searchParams.get('teamId') === 'team_test' && url.searchParams.get('filter') === "environment eq 'preview'"));
+  global.fetch = async () => ({ ok: false });
+  const unavailable = await traffic({ start: '2026-10-11', end: '2026-10-12' });
+  assert.equal(unavailable.available, false);
+  assert.equal(unavailable.approximateVisitors, undefined);
+  delete process.env.ANALYTICS_VERCEL_TEAM_ID;
+});
+test('allow, keyboard click and middle-click count, withdrawal stops both collectors immediately', async () => {
+  const requests = [], handlers = {}, scripts = [];
+  let saved = null;
+  const context = {
+    URL, localStorage: { getItem: () => saved, setItem: (_, value) => { saved = value; } }, navigator: {},
+    location: { pathname: '/', origin: 'https://www.northumbriaconstruct.com', href: 'https://www.northumbriaconstruct.com/' },
+    document: { referrer: '', querySelector: () => null, querySelectorAll: () => [], addEventListener: (name, handler) => { handlers[name] = handler; }, createElement: () => ({ dataset: {}, setAttribute() {} }), head: { append: value => scripts.push(value) }, body: { append() {} } },
+    fetch: async (url, options) => { requests.push({ url, options }); return { ok: true, json: async () => ({ enabled: true, pages: catalog.pages, targets: catalog.targets }) }; },
+    window: { addEventListener() {} }
+  };
+  vm.runInNewContext(fs.readFileSync('analytics.js', 'utf8'), context);
+  await new Promise(resolve => setImmediate(resolve));
+  const choose = value => handlers.click({ target: { closest: selector => selector === '[data-statistics-choice]' ? { dataset: { statisticsChoice: value } } : null } });
+  choose('on');
+  assert.equal(saved, 'on');
+  assert.equal(requests.filter(item => item.url === '/api/analytics-collect').length, 1);
+  const linkEvent = { button: 1, target: { closest: selector => selector === 'a[href]' ? { getAttribute: () => catalog.targets[0].destination } : null } };
+  handlers.click(linkEvent); handlers.auxclick(linkEvent);
+  assert.equal(requests.filter(item => item.url === '/api/analytics-collect').length, 3);
+  const hook = context.window.vaq[0][1];
+  choose('off'); handlers.click(linkEvent); handlers.auxclick(linkEvent);
+  assert.equal(saved, 'off');
+  assert.equal(requests.filter(item => item.url === '/api/analytics-collect').length, 3);
+  assert.equal(hook({ type: 'pageview', url: '/' }), null);
+  assert.equal(scripts.length, 1);
+});
