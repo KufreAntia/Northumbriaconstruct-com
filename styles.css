@@ -1030,3 +1030,49 @@ body.modal-open { overflow: hidden; }
 @media(max-width:900px) and (min-width:601px), (max-width:380px) {
  .hub-committee-roles ul { grid-template-columns:1fr; }
 }
+/* Activities archive and Opportunities use the existing brand and native links. */
+.engagement-nav { display:flex; gap:12px; padding-block:24px; font-family:var(--sans); }
+.engagement-nav > a { flex:1; max-width:360px; padding:16px 20px; border:1px solid #a8c4b2; border-radius:12px; font-weight:700; text-decoration:none; color:var(--green-900); }
+.engagement-nav > a[aria-current="page"] { background:var(--green-900); color:white; }
+.engagement-nav span { display:block; margin-top:6px; font-size:.78rem; font-weight:500; line-height:1.4; }
+.opportunities-page .section { padding-block:72px; }
+.opportunities-page .section-links { flex-wrap:wrap; }
+.opportunities-page [id],.relocated-events [id] { scroll-margin-top:120px; }
+.opportunity-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; margin-block:32px; }
+.opportunity-card { min-width:0; padding:28px; border:1px solid #b6ccbd; border-radius:var(--radius); background:white; box-shadow:0 10px 28px rgba(11,61,38,.04); }
+.opportunity-grid .opportunity-card { display:flex; flex-direction:column; align-items:flex-start; }
+.opportunity-grid .opportunity-card > a { margin-top:auto; }
+.opportunity-grid .opportunity-card h3 { font:700 1.35rem/1.3 var(--sans); margin:0 0 16px; color:var(--green-900); }
+.event-status { display:inline-block; margin-bottom:16px; padding:7px 12px; border-radius:8px; background:var(--green-100); color:var(--green-900); font:700 .76rem/1.5 var(--sans); }
+.opportunity-card[data-status="fully-booked"] .event-status { background:#fff0cc; color:#654400; }
+.opportunity-card[data-status="cancelled"] .event-status { background:#fce7e7; color:#822323; }
+.opportunity-card[data-status="concluded"] .event-status,.opportunity-card[data-status="awaiting-confirmation"] .event-status { background:var(--grey-100); color:var(--charcoal); }
+.opportunity-intro { display:grid; grid-template-columns:minmax(150px,230px) minmax(0,1fr); gap:40px; align-items:start; }
+.opportunity-intro h2 { font-size:clamp(1.8rem,3vw,2.8rem); line-height:1.15; }
+.opportunity-organiser { font:500 .9rem/1.7 var(--sans); }
+.opportunity-facts { display:grid; grid-template-columns:1fr 1fr; gap:18px 24px; margin:24px 0; font-family:var(--sans); }
+.opportunity-facts div { min-width:0; }.opportunity-facts dt { color:var(--green-800); font-size:.78rem; font-weight:700; margin-bottom:4px; }
+.opportunity-facts dd { margin:0; font-size:.95rem; line-height:1.6; }
+.flyer-slot { min-width:0; margin:0; }
+.opportunity-flyer { display:block; width:100%; height:auto; aspect-ratio:auto; object-fit:contain; border-radius:8px; }
+.flyer-slot figcaption { margin-top:12px; font:600 .82rem/1.5 var(--sans); }
+.opportunity-details { margin-top:32px; padding-top:28px; border-top:1px solid var(--grey-200); }
+.opportunity-details > p { max-width:850px; }
+.facilitator-profile { margin-top:32px; padding:28px; border-left:3px solid var(--green-700); border-radius:0 12px 12px 0; background:var(--green-50); }
+.facilitator-profile .eyebrow { margin-bottom:16px; }
+.relocated-events { display:flex; flex-wrap:wrap; gap:12px 24px; padding:0; list-style:none; margin-top:24px; font-size:.95rem; }
+.activities-page .activity-photo-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; align-items:start; margin-block:28px; }
+.activities-page .activity-photo-gallery .gallery-card { width:100%; margin:0; max-width:none; }
+.activities-page .activity-photo-gallery img { width:100%; height:auto; aspect-ratio:auto; object-fit:contain; }
+.event-photo-link { display:block; }.event-photo-link:focus-visible { outline-offset:-4px; }
+@media(max-width:900px) { .opportunity-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:620px) {
+ .engagement-nav { gap:8px; }.engagement-nav > a { padding:12px; font-size:.85rem; }
+ .opportunities-page .section { padding-block:48px; }
+ .opportunity-grid { grid-template-columns:1fr; }
+ .opportunity-card { padding:20px; }.opportunity-intro { grid-template-columns:1fr; gap:24px; }
+ .flyer-slot { width:min(100%,200px); margin-inline:auto; }
+ .opportunity-facts { grid-template-columns:1fr; gap:14px; }
+ .facilitator-profile { padding:20px; }
+ .activities-page .activity-photo-gallery { grid-template-columns:1fr; }
+}
