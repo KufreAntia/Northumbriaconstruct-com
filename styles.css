@@ -1076,3 +1076,8 @@ body.modal-open { overflow: hidden; }
  .facilitator-profile { padding:20px; }
  .activities-page .activity-photo-gallery { grid-template-columns:1fr; }
 }
+
+/* Built heritage pathways reuse the Opportunities cards. */
+.built-heritage-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.research-opportunity { margin-top:32px; }
+@media(max-width:620px) { .built-heritage-grid { grid-template-columns:1fr; } }
