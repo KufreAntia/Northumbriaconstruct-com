@@ -6,3 +6,6 @@ tmp/
 .git/
 .vercel/
 __pycache__/
+
+# Retired page: source must never be uploaded.
+news-insights.html
