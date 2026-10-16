@@ -39,9 +39,10 @@
     },
     {
       "src": "^/news-insights(?:\\.html)?/?$",
-      "status": 410,
+      "status": 308,
       "headers": {
-        "Cache-Control": "public, max-age=0, must-revalidate"
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Location": "https://www.northumbriaconstruct.com/"
       }
     }
   ]

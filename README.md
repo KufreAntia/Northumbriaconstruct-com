@@ -39,4 +39,4 @@ Run `python docs/verify-phase1.py`, `python docs/verify-phase2.py`, `node --chec
 
 The approved content update uses owner-supplied records and photographs. See `docs/phase2/APPROVED-BUILD.md` for the current handoff. PIIE is excluded and NorCon interface screenshots are not displayed. Original assets remain intact. No Google Drive folder has been connected. Do not deploy or push without explicit owner approval.
 
-The retired News & Insights URL returns HTTP 410 through Vercel routing. Its source is archived privately outside the repository and is absent from deployment output.
+The retired News & Insights URL permanently redirects to the homepage (HTTP 308) through Vercel routing. Its source is archived privately outside the repository and is absent from deployment output.
