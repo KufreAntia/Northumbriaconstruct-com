@@ -9,3 +9,8 @@ __pycache__/
 
 # Retired page: source must never be uploaded.
 news-insights.html
+
+# Authoring sources are compiled to static HTML before deployment.
+content/
+templates/
+scripts/

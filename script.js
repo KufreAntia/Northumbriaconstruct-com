@@ -208,3 +208,51 @@ menuButton?.addEventListener('click', () => {
   if (menuButton.getAttribute('aria-expanded') === 'false') closeDisclosures();
 });
 window.matchMedia('(min-width: 901px)').addEventListener('change', () => closeDisclosures());
+
+// Retain incoming fragment links to articles migrated from category pages.
+const followLegacyPost = () => {
+  const ident = decodeURIComponent(location.hash.slice(1));
+  const anchor = document.getElementById(ident);
+  if (anchor?.dataset.legacyPost) location.replace(anchor.dataset.legacyPost);
+};
+try { followLegacyPost(); } catch { /* Malformed fragments leave navigation usable. */ }
+window.addEventListener('hashchange', () => { try { followLegacyPost(); } catch {} });
+
+// Share public canonical URLs, including when reviewing the site locally.
+document.querySelectorAll('.post-sharing').forEach((area) => {
+  const feedback = area.querySelector('.share-feedback');
+  const input = area.querySelector('.share-url');
+  const copyButton = area.querySelector('[data-copy-link]');
+  const shareButton = area.querySelector('[data-native-share]');
+  const copyLink = async () => {
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(input.value);
+    } catch {
+      const previous = document.activeElement;
+      input.focus();
+      input.select();
+      let copied = false;
+      try { copied = document.execCommand('copy'); } catch {}
+      if (!copied) {
+        feedback.textContent = 'Select and copy the Post URL above. You can paste it into Instagram or another app.';
+        return;
+      }
+      previous?.focus();
+    }
+    feedback.textContent = 'Link copied. Paste it into Instagram, a message or another app.';
+  };
+  copyButton.hidden = false;
+  shareButton.hidden = false;
+  copyButton.addEventListener('click', copyLink);
+  shareButton.addEventListener('click', async () => {
+    if (!navigator.share) { await copyLink(); return; }
+    try {
+      await navigator.share({ title: shareButton.dataset.title, url: shareButton.dataset.url });
+      feedback.textContent = 'Post link shared.';
+    } catch (error) {
+      if (error.name === 'AbortError') feedback.textContent = 'Sharing cancelled.';
+      else await copyLink();
+    }
+  });
+});
