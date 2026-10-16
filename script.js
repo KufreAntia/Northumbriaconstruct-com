@@ -175,3 +175,36 @@ document.querySelectorAll('[data-story-grid]').forEach((grid) => {
     });
   }));
 });
+
+// Keep disclosures mutually exclusive and close them without trapping focus.
+const navDisclosures = Array.from(document.querySelectorAll('.site-nav details'));
+const closeDisclosures = (except = null) => navDisclosures.forEach((details) => {
+  if (details !== except) {
+    details.open = false;
+    details.querySelector('summary').setAttribute('aria-expanded', 'false');
+  }
+});
+navDisclosures.forEach((details) => {
+  details.addEventListener('toggle', () => {
+    details.querySelector('summary').setAttribute('aria-expanded', String(details.open));
+    if (details.open) closeDisclosures(details);
+  });
+  details.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && details.open) {
+      event.stopPropagation();
+      details.open = false;
+      details.querySelector('summary').setAttribute('aria-expanded', 'false');
+      details.querySelector('summary').focus();
+    }
+  });
+});
+document.addEventListener('click', (event) => {
+  if (!event.target.closest('.nav-about')) closeDisclosures();
+});
+navigation?.addEventListener('focusout', (event) => {
+  if (!navigation.contains(event.relatedTarget)) closeDisclosures();
+});
+menuButton?.addEventListener('click', () => {
+  if (menuButton.getAttribute('aria-expanded') === 'false') closeDisclosures();
+});
+window.matchMedia('(min-width: 901px)').addEventListener('change', () => closeDisclosures());

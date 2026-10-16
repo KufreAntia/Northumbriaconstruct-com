@@ -6,6 +6,9 @@ A simple, dependency-free static website for Northumbria Construct.
 
 - `index.html` — Home
 - `about.html` — About, journey and operating model
+- `our-work.html` — Overview of Projects, Activities and Innovation
+- `get-involved.html` — Overview of opportunities, resources, volunteering and joining
+- `volunteer-collaborate.html` — Volunteering and collaboration through the existing contact pathway
 - `projects.html` — Projects and impact
 - `activities.html` — Newcastle and Ibom Hub activities, visits and engagement records
 - `innovation-lab.html` — BRIC and NorCon Projects
